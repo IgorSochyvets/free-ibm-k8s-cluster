@@ -19,3 +19,16 @@ variable "zone" {
     default = "wdc06"
 }
 
+variable "machine_type_default_worker" {
+    default = "free"
+}
+
+variable "hardware" {
+    default = "shared"
+}
+
+variable "kube_version" {
+  description = "Version of K8S to use"
+  type = string
+  default = "1.17.11"
+}
