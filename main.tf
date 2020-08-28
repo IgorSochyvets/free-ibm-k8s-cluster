@@ -17,12 +17,12 @@ resource "ibm_container_cluster" "k8s" {
   machine_type      = var.machine_type_default_worker
   hardware          = var.hardware
   kube_version      = var.kube_version
-  resource_group_id  = var.resource_group_id
+  resource_group_id  = data.ibm_resource_group.group.id
 }
 
 
 data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id = ibm_container_cluster.k8s.name
-  resource_group_id = var.resource_group_id
+  resource_group_id = data.ibm_resource_group.group.id
   depends_on = [ibm_container_cluster.k8s]
 }
