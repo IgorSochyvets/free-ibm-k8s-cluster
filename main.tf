@@ -27,6 +27,21 @@ data "ibm_container_cluster_config" "cluster_config" {
   depends_on = [ibm_container_cluster.k8s]
 }
 
+
+resource "null_resource" "install_cert-manager" {
+  provisioner "local-exec" {
+    interpreter = ["bash", "-c"]
+    command = <<LOCAL_EXEC
+      export KUBECONFIG="${data.ibm_container_cluster_config.cluster_config.config_file_path}"
+
+      kubectl get nodes
+
+    LOCAL_EXEC
+   }
+}
+
+/* 
+# Certmanager
 resource "null_resource" "install_cert-manager" {
   provisioner "local-exec" {
     interpreter = ["bash", "-c"]
@@ -54,3 +69,4 @@ resource "null_resource" "install_cert-manager" {
     LOCAL_EXEC
    }
 }
+*/
