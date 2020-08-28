@@ -16,15 +16,7 @@ resource "ibm_container_cluster" "k8s" {
   default_pool_size = 1
   machine_type      = var.machine_type_default_worker
   hardware          = var.hardware
-  
-  public_vlan_id    = var.subnets[0].public_vlan_id
-  private_vlan_id   = var.subnets[0].private_vlan_id
-
   kube_version      = var.kube_version
-
-  public_service_endpoint  = true
-  private_service_endpoint = true
-
   resource_group_id  = var.resource_group_id
 }
 
