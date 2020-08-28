@@ -15,3 +15,7 @@ variable "kubernetes_cluster_name" {
     default = "free-k8s-cluster-aug-2020"
 }
 
+variable "zone" {
+    default = "wdc06"
+}
+
