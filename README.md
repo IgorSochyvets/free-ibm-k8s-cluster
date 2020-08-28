@@ -23,7 +23,7 @@ helm install \
 
 kubectl apply -f clusterissuer.yaml
 ```
-#### Ingress deployment
+#### Nginx Ingress Controller deployment
 
 ```
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
