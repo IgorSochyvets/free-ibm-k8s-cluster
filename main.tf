@@ -12,7 +12,7 @@ data "ibm_resource_group" "group" {
 
 resource "ibm_container_cluster" "k8s" {
   name              = var.kubernetes_cluster_name
-  datacenter        = var.subnets[0].zone
+  datacenter        = var.zone
   default_pool_size = 1
   machine_type      = var.machine_type_default_worker
   hardware          = var.hardware
