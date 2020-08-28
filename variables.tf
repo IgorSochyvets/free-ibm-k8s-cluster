@@ -4,7 +4,7 @@ variable "ibm_bmx_api_key" {
 }
 
 variable "region" {
-   default = ""
+   default = "us-south"
 }
 
 variable "resource_group" {
@@ -16,7 +16,7 @@ variable "kubernetes_cluster_name" {
 }
 
 variable "zone" {
-    default = "wdc06"
+    default = "hou02"
 }
 
 variable "machine_type_default_worker" {
